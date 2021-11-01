@@ -6,7 +6,7 @@ TOKEN = ""
 ID = "graph1"
 user_params = {
     "token": TOKEN,
-    "username": "lynnemunini",
+    "username": USERNAME,
     "agreeTermsOfService": "yes",
     "notMinor": "yes"
 }
