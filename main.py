@@ -1,8 +1,8 @@
 import requests
 from datetime import datetime
 pixela_endpoint ="https://pixe.la/v1/users"
-USERNAME = ""
-TOKEN = ""
+USERNAME = "lynnemunini"
+TOKEN = "hgfertyulnbsxvgvhjkjjosdcbgffnnb"
 ID = "graph1"
 user_params = {
     "token": TOKEN,
@@ -18,7 +18,7 @@ graph_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs"
 graph_config = {
     "id": ID,
     "name": "Coding Graph",
-    "unit": "hour",
+    "unit": "hours",
     "type": "int",
     "color": "ichou"
 }
@@ -26,9 +26,9 @@ graph_config = {
 headers = {
     "X-USER-TOKEN": TOKEN
 }
-# todays date
+# today's date
 today = datetime.now()
-# today = datetime(year=2021, month=10, day=29)
+# today = datetime(year=2021, month=11, day=22)
 date = today.strftime("%Y%m%d")
 # response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 # print(response.text)
@@ -38,19 +38,17 @@ quantity_config = {
     "date": date,
     "quantity": input("How many hours did you code today? ")
 }
-# response = requests.post(url=quantity_endpoint, json=quantity_config, headers=headers)
-# print(response.text)
+response = requests.post(url=quantity_endpoint, json=quantity_config, headers=headers)
+print(response.text)
 
+# To update a graph
 # update_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{ID}/{date}"
 # quantity_update = {
 #     "quantity": "100"
 # }
 
-response = requests.post(url=quantity_endpoint, json=quantity_config, headers=headers)
-print(response.text)
-
 
 # To Delete a graph
-
+#
 # response = requests.delete(url=quantity_endpoint, headers=headers)
 # print(response.text)
